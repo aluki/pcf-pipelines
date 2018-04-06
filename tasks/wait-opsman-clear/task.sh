@@ -28,6 +28,11 @@ function main() {
   set +e
   while :
   do
+     echo om-linux --target "https://${OPSMAN_DOMAIN_OR_IP_ADDRESS}" \
+           --skip-ssl-validation \
+           --username "${OPSMAN_USERNAME}" \
+           --password "${OPSMAN_PASSWORD}" \
+            curl -path /api/v0/staged/pending_changes
 
       om-linux --target "https://${OPSMAN_DOMAIN_OR_IP_ADDRESS}" \
            --skip-ssl-validation \
